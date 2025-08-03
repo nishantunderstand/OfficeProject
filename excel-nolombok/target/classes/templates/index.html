@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Excel Manager (No Lombok)</title>
+</head>
+<body>
+<h2>Upload Excel</h2>
+<form method="post" enctype="multipart/form-data" action="/upload">
+    <input type="file" name="file"/>
+    <button type="submit">Upload</button>
+</form>
+
+<h2>Uploaded Files</h2>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Actions</th>
+    </tr>
+    <tr th:each="file : ${files}">
+        <td th:text="${file.id}"></td>
+        <td th:text="${file.name}"></td>
+        <td>
+            <a th:href="@{'/download/' + ${file.id}}">Download</a> |
+            <form method="post" enctype="multipart/form-data" th:action="@{'/update/' + ${file.id}}" style="display:inline;">
+                <input type="file" name="file"/>
+                <button type="submit">Update</button>
+            </form>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

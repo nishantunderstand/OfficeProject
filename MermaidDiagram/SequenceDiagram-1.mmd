@@ -1,0 +1,17 @@
+sequenceDiagram
+    participant User
+    participant UI
+    participant Controller
+    participant Service
+    participant Validator
+    participant Repository
+
+    User->>UI: Select file + Submit form
+    UI->>Controller: HTTP POST /upload
+    Controller->>Validator: checkSizeAndType(file)
+    Validator-->>Controller: valid/invalid
+    Controller->>Service: parseAndSave(file)
+    Service->>Repository: save(data)
+    Repository-->>Service: saved entity
+    Service-->>Controller: success
+    Controller->>UI: Show upload status

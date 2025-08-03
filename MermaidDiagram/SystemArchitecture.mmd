@@ -1,0 +1,7 @@
+graph TD
+    A[Browser UI Form] -->|Upload XLS/XLSX| B[Spring Boot Backend]
+    B --> C[File Validator]
+    C --> D[Size & Virus Check]
+    D --> E[Parse Excel Data]
+    E --> F[Database OR MySQLPostgreSQL]
+    B -->|Download by ID| G[Send XLS/XLSX to UI]

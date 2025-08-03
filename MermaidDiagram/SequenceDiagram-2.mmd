@@ -1,0 +1,37 @@
+sequenceDiagram
+    %% LAYER: Presentation Layer
+    participant User
+    participant UI
+
+    %% LAYER: Controller Layer
+    participant Controller
+
+    %% LAYER: Service Layer
+    participant Service
+
+    %% LAYER: Validation Layer
+    participant Validator
+
+    %% LAYER: Repository Layer
+    participant Repository
+
+    %% Interaction starts
+    User->>UI: Select file + Submit form
+    UI->>Controller: HTTP POST /upload
+
+    Controller->>Validator: checkSizeAndType(file)
+    Validator-->>Controller: valid/invalid
+
+    Controller->>Service: parseAndSave(file)
+    Service->>Repository: save(data)
+    Repository-->>Service: saved entity
+    Service-->>Controller: success
+
+    Controller->>UI: Show upload status
+
+    %% Optional: Notes to indicate layers
+    note over UI: 🌐 Presentation Layer
+    note over Controller: 🚦 Controller Layer
+    note over Service: ⚙️ Service Layer
+    note over Validator: 🛡️ Validation Layer
+    note over Repository: 🗄️ Repository Layer
