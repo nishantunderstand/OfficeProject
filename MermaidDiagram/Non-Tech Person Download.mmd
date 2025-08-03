@@ -1,0 +1,20 @@
+flowchart TD
+    A[🔐 User Requests to Download File] --> B{✅ Role Check}
+
+    B -->|✅ Has Permission| C[📦 Locate File by Document ID]
+    B -->|❌ Unauthorized| B1[⛔ Show Access Denied Message]
+
+    C --> D{📍 Where is the File?}
+    D -->|In Database| E1[⬇️ Fetch from DB]
+    D -->|In S3 Bucket| E2[⬇️ Download from S3]
+
+    E1 --> F[📤 Generate Excel Stream]
+    E2 --> F
+
+    F --> G{🧾 Add Headers}
+    G --> H[Content-Disposition: attachment]
+    G --> I[Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet]
+
+    H --> J[📁 Send File to Browser]
+    I --> J
+    J --> K[✅ User Downloads the File]
