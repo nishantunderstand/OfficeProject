@@ -130,4 +130,16 @@ Will It have Single Sheet or Multiple Sheets?
 
 https://mermaid.js.org/syntax/flowchart.html
 
+
+
+There is going to be a Predefined Template for Excel File.
+I need to download the Template.
+
+Where it will be stored? 
+Cache or S3 Bucket?
+Redis Cache?
+Is it Frequently Used?
+Where to Store the Template?
+
+
 ```
