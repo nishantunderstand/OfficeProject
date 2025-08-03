@@ -1,0 +1,26 @@
+flowchart TD
+    A[📁 User Uploads Excel File] --> B{✅ Validations}
+    
+    B -->|Allowed Extension: .xls / .xlsx| C[📥 Accept File]
+    B -->|❌ Invalid Extension or Size| B1[⚠️ Show Error Message]
+    B1 --> B2[🚫 Reject Upload]
+
+    C --> D{📦 Macro Check}
+    D -->|❌ Macro Detected| D1[🚫 Reject File + Notify]
+    D -->|✅ No Macro| E{🛡️ Virus Scan}
+    
+    E -->|❌ Virus Found| E1[🚫 Reject File + Alert]
+    E -->|✅ Clean| F[🧠 Extract Metadata]
+
+    F --> G{💾 Save To}
+    G -->|📦 S3 Bucket| H1[S3 Upload]
+    G -->|🗂️ Database| H2[Insert into DB with Document ID]
+
+    H1 --> I[📝 Save Document ID + Metadata in DB]
+    H2 --> I
+
+    I --> J[✅ Upload Complete!]
+    J --> K[🔐 Role Check for Access]
+
+    K -->|User Has Permission| L[⬇️ Allow Download]
+    K -->|Unauthorized| M[⛔ Show Access Denied]
