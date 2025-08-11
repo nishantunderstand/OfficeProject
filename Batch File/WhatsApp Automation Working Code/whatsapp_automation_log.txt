@@ -1,0 +1,18 @@
+WhatsApp Automation Log
+==================================================
+✅ Queued: +919311834004 → 'How are you ? 
+How do you do ?...'
+✅ Queued: +919711688154 → 'Hii?
+Ignore Me
+Any Plan of Sle...'
+✅ Queued: +918318936098 → 'Is your Sister Okay ???
+Are Yo...'
+
+📬 Found 3 valid message(s) to send. Starting...
+
+📨 [1/3] Sending to +919311834004...
+📨 [2/3] Sending to +919711688154...
+📨 [3/3] Sending to +918318936098...
+--------------------------------------------------
+✅ Automation complete. All messages processed.
+--------------------------------------------------

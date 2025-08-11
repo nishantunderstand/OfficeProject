@@ -1,0 +1,15 @@
+WhatsApp Automation Log
+==================================================
+✅ Queued: +919311834004 → 'How are you ? 
+How do you do ?...'
+🟡 Skipped row 3: Empty message for phone: 9711688154
+🟡 Skipped row 4: Empty message for phone: 8318936098
+✅ Queued: +917217806886 → 'Is there any Hope ?...'
+
+📬 Found 2 valid message(s) to send. Starting...
+
+📨 [1/2] Sending to +919311834004...
+📨 [2/2] Sending to +917217806886...
+--------------------------------------------------
+✅ Automation complete. All messages processed.
+--------------------------------------------------

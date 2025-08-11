@@ -1,0 +1,23 @@
+I want you to Apply to Job
+Except TCS, Tech Mahindra, TCS
+
+Job Range : 10-12 LPA
+Location : Noida, Guraogon
+Auto Apply on Job Site
+
+
+I am Sharing my Resume as well
+Fill the Necessary Details Self
+
+Local Step
+Output in CSV Files
+
+
+auto_apply.py
+config.py
+job_filter.py
+job_scraper.py
+main.py
+Nishant_Raj_Resume_3y_9m.pdf
+README.md
+output.csv
